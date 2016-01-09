@@ -7,6 +7,13 @@ a
   text-decoration: none;
 }
 
+.anchor
+{
+  display: block;
+  height: 100px; /*same height as header*/
+  margin-top: -100px; /*same height as header*/
+  visibility: hidden;
+}
 #hidden
 {
   background-color:#c9c9c9;
@@ -15,6 +22,7 @@ a
   text-align: center;
   padding-top:46;
   padding-bottom:46;
+  top:0;
   width:100%;
 }
 .block1
@@ -28,6 +36,7 @@ a
   width:100%;
   position:fixed;
   top:0;
+  display:block;
 }
 .menu
 {
@@ -100,6 +109,7 @@ a
   background-color:89bdd3;
   width:60%;  
 }
+
   </style>
 </head>
 <body>
@@ -113,6 +123,7 @@ a
     </div>
   </div>
   <div id="about">
+  <span class="anchor"></span>
   <div class="block2">
     <div class="sidetitle1">
       <h2>#about me</h2>
@@ -127,7 +138,8 @@ a
     </div>
   </div>
   </div>
-  <div id="skills"></div>
+  <div id="skills">
+    <span class="anchor"></span>
   <div class="block3">
     <div class="sidetitle2">
       <h2>#skills</h2>
@@ -142,7 +154,9 @@ a
       </ul>
     </div>
   </div>
-  <div id="work"></div>
+  </div>
+  <div id="work">
+    <span class="anchor"></span>
   <div class="block2">
     <div class="sidetitle1">
       <h2>#work</h2>
@@ -154,7 +168,9 @@ a
       </ul>
     </div>
   </div>
-  <div id="ed"></div>
+  </div>
+  <div id="ed">
+    <span class="anchor"></span>
   <div class="block3">
     <div class="sidetitle2">
       <h2>#education</h2>
@@ -164,7 +180,9 @@ a
         <li class="item">I'z been educated</li>
     </div>
   </div>
-  <div id="contact"></div>
+  </div>
+  <div id="contact">
+    <span class="anchor"></span>
   <div class="block2">
     <div class="sidetitle1">
       <h2>#contact me</h2>
@@ -174,6 +192,7 @@ a
         <li class="item"> here's where to contact me</li>
       </ul>
     </div>
+  </div>
   </div>
 </body>
 </html>
