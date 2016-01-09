@@ -1,7 +1,13 @@
 <html>
   <head>
   <style>
- #hidden
+a
+{
+  color:#e3e3e3;
+  text-decoration: none;
+}
+
+#hidden
 {
   background-color:#c9c9c9;
   color:#c9c9c9;
@@ -28,7 +34,7 @@
   background-color:#c9c9c9;
   top:140px;
   position:fixed;
-  width:98.2%
+  width:100%
 
 }
 .mitem
@@ -94,8 +100,6 @@
   background-color:89bdd3;
   width:60%;  
 }
-
-
   </style>
 </head>
 <body>
@@ -105,10 +109,10 @@
   <div class="block1">
     <h1 class="title">#Elena Hirst | Geek - Linguist - BYU Student
     <div class="menu">
-      <h6 class="mitem">about me - skills - work - education - contact</h6>
+      <h6 class="mitem"><a href="about">about me</a> - <a href="skills">skills</a> - <a href="work">work</a> - <a href="ed">education</a> - <a href="contact">contact</a></h6>
     </div>
   </div>
-  <div class="block2">
+  <div class="block2" id="about">
     <div class="sidetitle1">
       <h2>#about me</h2>
     </div>
@@ -121,7 +125,7 @@
       </ul>
     </div>
   </div>
-  <div class="block3">
+  <div class="block3" id="skills">
     <div class="sidetitle2">
       <h2>#skills</h2>
     </div>
@@ -135,7 +139,7 @@
       </ul>
     </div>
   </div>
-  <div class="block2">
+  <div class="block2" id="work">
     <div class="sidetitle1">
       <h2>#work</h2>
     </div>
@@ -147,7 +151,7 @@
     </div>
   </div>
   <div class="block3">
-    <div class="sidetitle2">
+    <div class="sidetitle2" id="ed">
       <h2>#education</h2>
     </div>
     <div class="details2">
@@ -156,7 +160,7 @@
     </div>
   </div>
   <div class="block2">
-    <div class="sidetitle1">
+    <div class="sidetitle1" id="contact">
       <h2>#contact me</h2>
     </div>
     <div class="details1">
