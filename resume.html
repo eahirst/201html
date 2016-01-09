@@ -1,26 +1,51 @@
 <html>
   <head>
   <style>
-   .block1
+ #hidden
 {
-  background-color:rgb(41,55,255);
-  color:rgb(138,224,255); 
+  background-color:#c9c9c9;
+  color:#c9c9c9;
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   text-align: center;
-  padding-top:100px;
-  padding-bottom:100px;
+  padding-top:50;
+  padding-bottom:50;
+  width:100%;
+}
+.block1
+{
+  background-color:#c9c9c9;
+  color:#e3e3e3; 
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  text-align: center;
+  padding-top:50;
+  padding-bottom:50;
+  width:100%;
+  position:fixed;
+  top:0;
+}
+.menu
+{
+  background-color:#c9c9c9;
+  top:140px;
+  position:fixed;
+  width:100%
+
+}
+.mitem
+{
+  margin:0;
 }
 .block2
 {
-  background-color:rgb(53,108,232); 
-  color:rgb(138,224,255); 
+  background-color:e3e3e3; 
+  color:#89bdd3; 
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   overflow:hidden;
 }
 .sidetitle1
 {
-  background-color:rgb(53,108,232); 
-  border-left:2px solid rgb(41,55,255);
+  background-color:e3e3e3;
+  border-left:2px solid #89bdd3;
   float:right;
   padding-top:200px;
   padding-bottom:200px;
@@ -31,7 +56,7 @@
 {
   float:right;
   text-align:right;
-  background-color:rgb(53,108,232); 
+  background-color:e3e3e3; 
   width:60%;  
 }
 .list
@@ -47,15 +72,15 @@
 }
 .block3
 {
-  background-color:rgb(41,55,255);
-  color:rgb(138,224,255); 
+  background-color:89bdd3;
+  color:e3e3e3; 
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   overflow:hidden;
 }
 .sidetitle2
 {
-  background-color:rgb(41,55,255);
-  border-right:2px solid rgb(138,224,255);
+  background-color:89bdd3;
+  border-right:2px solid #e3e3e3;
   float:left;
   padding-top:200px;
   padding-bottom:200px;
@@ -66,15 +91,22 @@
 {
   float:left;
   text-align:left;
-  background-color:rgb(41,55,255);
+  background-color:89bdd3;
   width:60%;  
 }
+
 
   </style>
 </head>
 <body>
+  <div id="hidden">
+    <h1 class="title">a</h1>
+  </div>
   <div class="block1">
     <h1 class="title">#Elena Hirst | Geek - Linguist - BYU Student
+    <div class="menu">
+      <h6 class="mitem">about me - skills - work - education - contact</h6>
+    </div>
   </div>
   <div class="block2">
     <div class="sidetitle1">
