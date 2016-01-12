@@ -125,8 +125,11 @@
 	<title>#resume</title>
 	<script>
 	<script language="javascript" type="text/javascript" src="getbyclass.js"></script>
-	<script type="text/javascript" language="javascript">
-		document.getElementsByClassName("sociallink").style.color = "#89bdd3";
+	<script type="text/javascript" language="javascript"></script>
+		var elements = document.getElementsByClassName('sociallink');
+		for(var i=0; i<elements.length; i++) { 
+		  elements[i].style.color = "#89bdd3";
+		}
 	</script>
 	
 	</head>
