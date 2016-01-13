@@ -262,7 +262,11 @@
 			</div>
 		</div>
 	<script>
-		document.getElementsByClassName('sociallink').style.color = "#89bdd3";
+		var socials = document.getElementsByClassName('sociallink');
+		for (i = 0; i < socials.length; i++)
+		{
+			socials[i].style.color = "#89bdd3";
+		}
 	</script>
 	</body>
 </html>
