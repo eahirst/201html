@@ -3,7 +3,27 @@
 	<head>
 		<title>City Finder</title>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<script>$(document).ready(function(){$("#cityfield").keyup(function(){var url="https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();$.getJSON(url,function(data){var everything;everything="<ul>";$.each(data,function(i,item){everything+="<li> "+data[i].city;});everything+="</ul>";$("#txtHint").html(everything);});$("txtHint").text("Keyup "+$("#cityfield").val());});});</script>
+		<script>$(document).ready(function(){
+				$("#cityfield").keyup(function(){
+					var url="https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();
+					$.getJSON(url,function(data){
+						var everything;everything="<ul>";
+						$.each(data,function(i,item){
+							everything+="<li> "+data[i].city;
+						});
+						everything+="</ul>";
+						$("#txtHint").html(everything);
+						});
+					$("txtHint").text("Keyup "+$("#cityfield").val());
+				});
+				$("#button").click(function(e){
+  					var value = $("#cityfield").val();
+					console.log(value);
+  					e.preventDefault();
+  					$("#dispcity").text(value);
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<form>
