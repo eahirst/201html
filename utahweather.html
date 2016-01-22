@@ -26,6 +26,12 @@
 			#txtHint{
 				list-style:none;
 			}
+			#info{
+				float:left;
+			}
+			#winfo{
+				float:right;
+			}
 
  		</style>
  		<title>City Finder</title>
@@ -102,11 +108,13 @@ var value = $("#cityfield").val();
  					Suggestion: <span><ul id="txtHint"></ul></span>
  					<input id="button" type="submit" value="Submit">
  				</form>
- 				<p>City</p>
+ 			</div>
+			<div id="winfo">
+				<p>City</p>
  				<textarea id="dispcity">No City</textarea>
  				<p>Current Weather</p>
  				<div><ul id="weather" ></ul></div>
- 			</div>
+			</div>
  		</div>
  	</body>
  </html>
