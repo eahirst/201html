@@ -1,114 +1,110 @@
-<html>
-	<head>
-		<style>
-			body{
-				background-color: black;
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-opacity:.50;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-			#infobox{
-				width: 400px;
-				height: 400px;
-				color: black;
-				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-				text-align: center;
-				margin-top: 10%;
-				margin-left: 20%;
-				font-size: 30px;
-				font-family: "Tahoma", Geneva, sans-serif;
-			}
-			#info{
-			
-			}
-			.list{
-				list-style-type:none;
-			}
-			.wlist{
-				list-style-type:none;
-			}
-		</style>
-		<title>City Finder</title>
-		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<script>$(document).ready(function(){
-				$("#cityfield").keyup(function(){
-					var url="https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();
-					$.getJSON(url,function(data){
-						var everything;everything="<ul>";
-						$.each(data,function(i,item){
-							everything+="<li class="list"> "+data[i].city;
-						});
-						everything+="</ul>";
-						$("#txtHint").html(everything);
-						});
-					$("txtHint").text("Keyup "+$("#cityfield").val());
-				});
-				$("#button").click(function(e){
-  					var value = $("#cityfield").val();
-					console.log(value);
-  					e.preventDefault();
-  					$("#dispcity").text(value);
-  					var myurl= "https://api.wunderground.com/api/ed6282be84bcb29a/geolookup/conditions/q/UT/";
-					myurl += value;
-					myurl += ".json";
-					console.log(myurl);
-					$.ajax({
-						url : myurl,
-					    	dataType : "jsonp",
-					    	success : function(parsed_json) {
-							var location = parsed_json['location']['city'];
-					      		var temp_string = parsed_json['current_observation']['temperature_string'];
-					      		var current_weather = parsed_json['current_observation']['weather'];
-					      		everything = "<ul>";
-					      		everything += "<li class="wlist">Location: "+location;
-					      		everything += "<li class="wlist">Temperature: "+temp_string;
-					      		everything += "<li class="wlist">Weather: "+current_weather;
-					      		everything += "</ul>";
-					      		$("#weather").html(everything);
-								if (current_weather.indexOf("Clear") > -1)
-								{
-									document.body.style.backgroundImage = "url('http://www.zastavki.com/pictures/originals/2014/Nature___Seasons___Spring_Clear_day_in_spring_field_067763_.jpg')";
-								}
-								else if(current_weather.indexOf("Sun") > -1)
-								{
-									document.body.style.backgroundImage = "url('https://49.media.tumblr.com/cba2767f9f2773952a2e8f07c83ff376/tumblr_n1pt2g0EBm1sg3qr6o1_500.gif')";
-								}
-								else if(current_weather.indexOf("Cloud") > -1)
-								{
-									document.body.style.backgroundImage = "url('http://fc09.deviantart.net/fs71/f/2011/194/a/8/a8aae169213863628351b0657b0d63b5-d3oreup.gif')";
-								}
-								else if(current_weather.indexOf("Snow") > -1)
-								{
-									document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/3665-Snowy-Days.gif?1')";
-								}
-								else
-								{
-									document.body.style.backgroundColor = "white";
-								}
-					    	}
-					 });
-				});
-			});
-		</script>
-	</head>
-	<body>
-		<div id="infobox">
-			<div id="info">
-				<form>
-					Enter a Utah City: 
-					<input type="text" id="cityfield" value=""><br>
-					Suggestion: <span id="txtHint">Empty</span>
-					<input id="button" type="submit" value="Submit">
-				</form>
-				<p>City</p>
-				<textarea id="dispcity">No City</textarea>
-				<p>Current Weather</p>
-				<div id="weather">No weather</div>
-			</div>
-		</div>
-	</body>
-</html>
+
+ <html>
+ 	<head>
+ 		<style>
+ 			body{
+ 				background-color: white;
+ 				background-repeat: no-repeat;
+ 				background-attachment: fixed;
+ 				background-opacity:.50;
+ 				-webkit-background-size: cover;
+ 				-moz-background-size: cover;
+ 				-o-background-size: cover;
+ 				background-size: cover;
+ 			}
+ 			#infobox{
+ 				width: 400px;
+ 				height: 400px;
+ 				color: white;
+ 				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  				text-align: center;
+  				margin-top: 10%;
+  				margin-left: 20%;
+ 				font-size: 30px;
+  				font-family: "Tahoma", Geneva, sans-serif;
+  			}
+  			#info{
+ 			
+ 			}
+ 		</style>
+ 		<title>City Finder</title>
+ 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 		<script>$(document).ready(function(){
+ 				$("#cityfield").keyup(function(){
+ 					var url="https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();
+ 					$.getJSON(url,function(data){
+ 						var everything;everything="<ul>";
+ 						$.each(data,function(i,item){
+ 							everything+="<li> "+data[i].city;
+ 						});
+ 						everything+="</ul>";
+ 						$("#txtHint").html(everything);
+ 						});
+ 					$("txtHint").text("Keyup "+$("#cityfield").val());
+ 				});
+ 				$("#button").click(function(e){
+   					var value = $("#cityfield").val();
+var value = $("#cityfield").val();
+ 					console.log(value);
+   					e.preventDefault();
+   					$("#dispcity").text(value);
+   					var myurl= "https://api.wunderground.com/api/ed6282be84bcb29a/geolookup/conditions/q/UT/";
+ 					myurl += value;
+ 					myurl += ".json";
+ 					console.log(myurl);
+ 					$.ajax({
+ 						url : myurl,
+ 					    	dataType : "jsonp",
+ 					    	success : function(parsed_json) {
+ 							var location = parsed_json['location']['city'];
+ 					      		var temp_string = parsed_json['current_observation']['temperature_string'];
+ 					      		var current_weather = parsed_json['current_observation']['weather'];
+ 					      		everything = "<ul>";
+ 					      		everything += "<li>Location: "+location;
+ 					      		everything += "<li>Temperature: "+temp_string;
+ 					      		everything += "<li>Weather: "+current_weather;
+ 					      		everything += "</ul>";
+ 					      		$("#weather").html(everything);
+ 								if (current_weather.indexOf("Clear") > -1)
+ 								{
+ 									document.body.style.backgroundImage = "url('http://www.zastavki.com/pictures/originals/2014/Nature___Seasons___Spring_Clear_day_in_spring_field_067763_.jpg')";
+ 								}
+ 								else if(current_weather.indexOf("Sun") > -1)
+ 								{
+ 									document.body.style.backgroundImage = "url('https://49.media.tumblr.com/cba2767f9f2773952a2e8f07c83ff376/tumblr_n1pt2g0EBm1sg3qr6o1_500.gif')";
+ 								}
+ 								else if(current_weather.indexOf("Cloud") > -1)
+ 								{
+ 									document.body.style.backgroundImage = "url('http://fc09.deviantart.net/fs71/f/2011/194/a/8/a8aae169213863628351b0657b0d63b5-d3oreup.gif')";
+ 								}
+ 								else if(current_weather.indexOf("Snow") > -1)
+ 								{
+ 									document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/3665-Snowy-Days.gif?1')";
+ 								}
+ 								else
+ 								{
+ 									document.body.style.backgroundColor = "white";
+ 								}
+ 					    	}
+ 					 });
+ 				});
+ 			});
+ 		</script>
+ 	</head>
+ 	<body>
+ 		<div id="infobox">
+ 			<div id="info">
+ 				<form>
+ 					Enter a Utah City: 
+ 					<input type="text" id="cityfield" value=""><br>
+ 					Suggestion: <span id="txtHint">Empty</span>
+ 					<input id="button" type="submit" value="Submit">
+ 				</form>
+ 				<p>City</p>
+ 				<textarea id="dispcity">No City</textarea>
+ 				<p>Current Weather</p>
+ 				<div id="weather">No weather</div>
+ 			</div>
+ 		</div>
+ 	</body>
+ </html>
