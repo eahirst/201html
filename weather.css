@@ -1,0 +1,40 @@
+#backg {
+  min-height: 680px;
+  background: url(images/field.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+#jumbo {
+  text-align: center;
+  background-color: rgba(190, 200, 204, 0.6);;
+}
+
+#music {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+}
+
+#keepButtons {
+  text-align: left;
+}
+
+.keep {
+  margin-top: 11px;
+}
+
+#drdaybtn {
+  display: none;
+}
+
+#drtimebtn {
+  display: none;
+}
+
+#dractivitybtn {
+  display: none;
+}
+
+#drweirdbtn {
+  display: none;
+}
