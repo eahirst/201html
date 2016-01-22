@@ -24,15 +24,15 @@
           var value = $("#usernamefield").val();
           e.preventDefault();
           var myurl = "";
-          var clientid = 'e11ae90c62354373987213e6ce3d9de8';
-          var username = value;
+          var clientid = 'e11ae90c62354373987213e6ce3d9de8',
+          var username = value,
           num_photos = 250;
  
-          $.ajax({ // the first ajax request returns the ID of user rudrastyh
+          $.ajax({ 
           	url: 'https://api.instagram.com/v1/users/search',
           	dataType: 'jsonp',
           	type: 'GET',
-          	data: {client_id: clientid, q: username}, // actually it is just the search by username
+          	data: {client_id: clientid, q: username}, 
           	success: function(data){
           		console.log(data);
           		$.ajax({
