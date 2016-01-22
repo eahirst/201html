@@ -16,7 +16,8 @@
  				width: 400px;
  				height: 400px;
  				color: white;
-				margin-top: 10%;
+				margin-top: 5%;
+				margin-left: 5%;
  				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   				text-align: center;
  				font-size: 30px;
@@ -61,7 +62,7 @@ var value = $("#cityfield").val();
  					      		var temp_string = parsed_json['current_observation']['temperature_string'];
  					      		var current_weather = parsed_json['current_observation']['weather'];
  					      		everything = "<ul>";
- 					      		everything += "<li style="list-style-type:none">Location: "+location;
+ 					      		everything += "<li>Location: "+location;
  					      		everything += "<li>Temperature: "+temp_string;
  					      		everything += "<li>Weather: "+current_weather;
  					      		everything += "</ul>";
