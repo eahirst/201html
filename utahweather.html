@@ -17,11 +17,17 @@
  				height: 400px;
  				color: white;
 				margin-top: 10%;
- 				
+ 				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   				text-align: center;
  				font-size: 30px;
   				font-family: "Tahoma", Geneva, sans-serif;
   			}
+			#txtHint{
+				list-style:none;
+			}
+			#weather{
+				list-style:none;
+			}
  		</style>
  		<title>City Finder</title>
  		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -94,13 +100,13 @@ var value = $("#cityfield").val();
  				<form>
  					Enter a Utah City: 
  					<input type="text" id="cityfield" value=""><br>
- 					Suggestion: <span><ul id="txtHint" style="list-style-type:none"></ul></span>
+ 					Suggestion: <span><ul id="txtHint"></ul></span>
  					<input id="button" type="submit" value="Submit">
  				</form>
  				<p>City</p>
  				<textarea id="dispcity">No City</textarea>
  				<p>Current Weather</p>
- 				<div><ul id="weather" style="list-style-type:none"></ul></div>
+ 				<div><ul id="weather"></ul></div>
  			</div>
  		</div>
  	</body>
