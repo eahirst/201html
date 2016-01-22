@@ -2,6 +2,7 @@
 	<head>
 		<style>
 			body{
+				background-color: white;
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-opacity:.50;
@@ -50,7 +51,23 @@
 					      		$("#weather").html(everything);
 								if (current_weather.indexOf("Clear") > -1)
 								{
+									document.body.style.backgroundImage = "url('http://www.zastavki.com/pictures/originals/2014/Nature___Seasons___Spring_Clear_day_in_spring_field_067763_.jpg')";
+								}
+								else if(current_weather.indexOf("Sun") > -1)
+								{
 									document.body.style.backgroundImage = "url('https://49.media.tumblr.com/cba2767f9f2773952a2e8f07c83ff376/tumblr_n1pt2g0EBm1sg3qr6o1_500.gif')";
+								}
+								else if(current_weather.indexOf("Cloud") > -1)
+								{
+									document.body.style.backgroundImage = "url('http://fc09.deviantart.net/fs71/f/2011/194/a/8/a8aae169213863628351b0657b0d63b5-d3oreup.gif')";
+								}
+								else if(current_weather.indexOf("Snow") > -1)
+								{
+									document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/3665-Snowy-Days.gif?1')";
+								}
+								else
+								{
+									document.body.style.backgroundColor = "white";
 								}
 					    	}
 					 });
