@@ -26,6 +26,8 @@
 	$("#button").click(function(e){
 		e.preventDefault();
 		var value = $("#usernamefield").val();
+		var url = "api.imagga.com/v1/colors?url=" + url1;
+		$.get(url, '/colors');
 	});
     </script>
   </body>
