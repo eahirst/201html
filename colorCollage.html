@@ -21,11 +21,12 @@
     <script>
       $("#button").click(function(e){
           var clientid = 'e11ae90c62354373987213e6ce3d9de8';
+          var redirect = 'http://ec2-54-201-106-57.us-west-2.compute.amazonaws.com/201html/colorCollage';
           var user = $("#usernamefield").val();
           var num_photos = 1;
           console.log(user);
           $.ajax({
-          	url: "https://api.instagram.com/v1/users/1522494795/media/recent",
+          	url: "https://api.instagram.com/oauth/authorize/?client_id=" + clientid + "&redirect_uri=" + redirect + "&response_type=token",
           	dataType: 'jsonp',
             	type: 'GET',
         	success: function(data){
