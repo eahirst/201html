@@ -20,15 +20,20 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
 	var clientid = 'e11ae90c62354373987213e6ce3d9de8';
-	var url1 = 'https://scontent-sjc2-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/12362341_1720262671539849_1311568262_n.jpg';
-	var url2 = 'https://scontent-sjc2-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/12317727_1660199094256908_550086984_n.jpg';
-	var url3 = 'https://scontent-sjc2-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/e35/12269714_434812933377919_1469167528_n.jpg';
-	$("#button").click(function(e){
-		e.preventDefault();
-		var value = $("#usernamefield").val();
-		var url = "https://api.imagga.com/v1/colors?url=" + url1;
-		$.get(url, '/colors');
-	});
+	var userTag = $("#usernamefield").val();
+	$(function() {
+	    $.ajax({
+	        type: 'GET',
+	        dataType: 'jsonp',
+	        cache: false,
+	        url: 'https://api.instagram.com/v1/tags/' + userTag + '/media/recent?client_id=' + clientid,
+	        success: function(data) {
+	            for(var i = 0; i < 20; i++) {
+	                $('body').append('<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>');
+	            }
+	        }
+	    });
+})();
     </script>
   </body>
 <html>
