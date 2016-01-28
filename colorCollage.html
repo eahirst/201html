@@ -21,6 +21,7 @@
     <script>
 	var clientid = 'ea126bd8795744b2a86ec4e775f6454c';
 	var userTag = $("#usernamefield").val();
+	var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
 	console.log(userTag);
 	$(document).ready(function() {
 		$("#button").click(function(e){
@@ -29,7 +30,7 @@
 		        type: 'GET',
 		        dataType: 'jsonp',
 		        cache: false,
-		        url: 'https://api.instagram.com/v1/tags/' + userTag + '/media/recent?client_id=' + clientid,
+		        url: myurl,
 		        success: function(data) {
 		            for(var i = 0; i < 20; i++) {
 		                $('body').append('<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>');
