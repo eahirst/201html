@@ -21,7 +21,7 @@
     <script>
 	var clientid = 'e11ae90c62354373987213e6ce3d9de8';
 	var userTag = $("#usernamefield").val();
-	$(function() {
+	$(document).ready(function() {
 	    $.ajax({
 	        type: 'GET',
 	        dataType: 'jsonp',
@@ -33,7 +33,7 @@
 	            }
 	        }
 	    });
-})();
+	});
     </script>
   </body>
 <html>
