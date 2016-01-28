@@ -29,7 +29,7 @@
 	        url: 'https://api.instagram.com/v1/tags/mormon/media/recent?client_id=' + clientid,
 	        success: function(data) {
 	            for(var i = 0; i < 20; i++) {
-	                $('body').append('<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>');
+	                console.log("hey!");
 	            }
 	        }
 	    });
