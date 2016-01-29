@@ -37,7 +37,15 @@
 				url: nameID,
 				success: function(dta){
 					console.log(dta);
-					var userID = dta['id'];
+					var userID = "";
+					for (var k = 0; k < dta.length; k++)
+					{
+						if (dta[k]['username'] == userName)
+						{
+							userID = dta[k]['id'];
+							break;
+						}
+					}
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		
 		    			$.ajax({
