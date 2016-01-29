@@ -31,19 +31,20 @@
 		var userTag = $("#usernamefield").val();
 		var colorPicked = $("#colorfield").val();
 		var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
-		var myurl2 =  "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
+		var myurl2 =  "https://api.instagram.com/v1/users/" + userTag + "/media/recent?client_id=" + clientid;
 		    $.ajax({
 		        type: 'GET',
 		        dataType: 'jsonp',
 		        cache: false,
-		        url: myurl,
+		        url: myurl2,
 		        success: function(data) {
-		            for(var i = 0; i < 2; i++) {
+		            for(var i = 0; i < 20; i++) {
 		            	var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
 		                console.log(data.data[i].images.standard_resolution.url);
 		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
 		                console.log(imaggaURL);
-		                $.ajax({
+		                $('body').append(toAppend);
+		                /*$.ajax({
 		                	type: 'GET',
 		                	dataType: 'jsonp',
 		                	cache: false,
@@ -61,7 +62,7 @@
 			                		}
 			                	}
 		                	}
-		                });
+		                });*/
 		            }
 		        }
 		    });
