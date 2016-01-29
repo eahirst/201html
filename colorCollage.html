@@ -35,7 +35,7 @@
 		        cache: false,
 		        url: myurl,
 		        success: function(data) {
-		            for(var i = 0; i < 20; i++) {
+		            for(var i = 0; i < 2; i++) {
 		            	var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
 		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].link;
 		                $.ajax({
@@ -43,6 +43,10 @@
 		                	dataType: 'jsonp',
 		                	cache: false,
 		                	url: imaggaURL,
+		                	async: false,
+					headers: {
+					   "Authorization": "Basic YWNjXzI3NTVkYzE2NDg5M2I4ZTozNTgxZDg0M2YwYzg3ODdkOGMzMGYyY2ZjOGZjNDAxNw=="
+					},
 		                	success: function(data2){
 			                	console.log(data2)
 		                	}
