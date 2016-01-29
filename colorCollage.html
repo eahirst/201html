@@ -38,7 +38,8 @@
 				success: function(dta){
 					console.log(dta);
 					var userID = "";
-					for (var k = 0; k < dta.length; k++)
+					console.log(dta[0]);
+					/*for (var k = 0; k < dta.length; k++)
 					{
 						console.log(dta[k]);
 						if (dta[k]['username'] == userName)
@@ -46,7 +47,7 @@
 							userID = dta[k]['id'];
 							break;
 						}
-					}
+					}*/
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		
 		    			$.ajax({
