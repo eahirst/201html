@@ -37,7 +37,7 @@
 				url: nameID,
 				success: function(dta){
 					console.log(dta);
-					var userID = "1522494795";
+					var userID = dta['id'];
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		
 		    			$.ajax({
