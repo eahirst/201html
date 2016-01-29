@@ -12,6 +12,7 @@
       <h2 align="center">Input an Instagram username:</h2>
       <input align="center" type="text" id="usernamefield" value="">
       <button role="button" id="button" type="submit" align="center">Submit</button>
+      </br>
     </div>
     <div id="images">
       
@@ -27,6 +28,7 @@
 		console.log($("#usernamefield").val());
 		var userTag = $("#usernamefield").val();
 		var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
+		var myurl2 =  "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
 		    $.ajax({
 		        type: 'GET',
 		        dataType: 'jsonp',
@@ -34,8 +36,17 @@
 		        url: myurl,
 		        success: function(data) {
 		            for(var i = 0; i < 20; i++) {
-		                $('body').append('<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>');
-		                
+		            	var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
+		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].link;
+		                $.ajax({
+		                	type: 'GET',
+		                	dataType: 'jsonp',
+		                	cache: false,
+		                	url: imaggaURL,
+		                	success: function(data2){
+			                	console.log(data2)
+		                	}
+		                });
 		            }
 		        }
 		    });
