@@ -37,8 +37,8 @@
 		        success: function(data) {
 		            for(var i = 0; i < 2; i++) {
 		            	var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
-		                console.log(data.data[i].link);
-		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].link;
+		                console.log(data.data[i].images.standard_resolution.url);
+		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
 		                console.log(imaggaURL);
 		               /* $.ajax({
 		                	type: 'GET',
