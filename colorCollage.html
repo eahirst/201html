@@ -40,7 +40,7 @@
 		                console.log(data.data[i].images.standard_resolution.url);
 		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
 		                console.log(imaggaURL);
-		               /* $.ajax({
+		                $.ajax({
 		                	type: 'GET',
 		                	dataType: 'jsonp',
 		                	cache: false,
@@ -52,7 +52,7 @@
 		                	success: function(data2){
 			                	console.log(data2)
 		                	}
-		                });*/
+		                });
 		            }
 		        }
 		    });
