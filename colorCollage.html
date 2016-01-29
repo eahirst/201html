@@ -57,12 +57,13 @@
 						cache: false,
 		        			url: myurl2,
 		        			success: function(data) {
+		        				$('images').empty();
 		            				for(var i = 0; i < 20; i++) {
 			            				var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
 						                console.log(data.data[i].images.standard_resolution.url);
 						                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
 						                console.log(imaggaURL);
-						                $('images').empty();
+						                
 						                $('images').append(toAppend);
 						                /*$.ajax({
 						                	type: 'GET',
