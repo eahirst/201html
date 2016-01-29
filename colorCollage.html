@@ -26,7 +26,7 @@
 	
 	$(document).ready(function() {
 		$("#button").click(function(e){
-			$("#images").html("");
+			$("#images").empty());
 			e.preventDefault();
 			console.log($("#usernamefield").val());
 			var userName = $("#usernamefield").val();
