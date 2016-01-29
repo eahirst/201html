@@ -11,6 +11,8 @@
       <h1 align="center">Color Collages</h1>
       <h2 align="center">Input an Instagram username:</h2>
       <input align="center" type="text" id="usernamefield" value="">
+      <h3 align="center">Pick a color:</h3>
+      <input align="center" type="text" id="colorfield" value="">
       <button role="button" id="button" type="submit" align="center">Submit</button>
       </br>
     </div>
@@ -27,6 +29,7 @@
 		e.preventDefault();
 		console.log($("#usernamefield").val());
 		var userTag = $("#usernamefield").val();
+		var colorPicked = $("#colorfield").val();
 		var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
 		var myurl2 =  "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
 		    $.ajax({
@@ -50,7 +53,13 @@
 					   "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
 					},
 		                	success: function(data2){
-			                	console.log(data2)
+			                	for(var j = 0; j < data2.colors["info"]["foreground_colors"].length; j++)
+			                	{
+			                		if (data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "red")
+			                		{
+			                			$('body').append(toAppend);
+			                		}
+			                	}
 		                	}
 		                });
 		            }
