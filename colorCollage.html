@@ -62,7 +62,8 @@
 						                console.log(data.data[i].images.standard_resolution.url);
 						                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
 						                console.log(imaggaURL);
-						                $('body').append(toAppend);
+						                $('images').empty();
+						                $('images').append(toAppend);
 						                /*$.ajax({
 						                	type: 'GET',
 						                	dataType: 'jsonp',
