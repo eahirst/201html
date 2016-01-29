@@ -10,9 +10,7 @@
   <title>Color Collages</title>
   </head>
   <body>
-  	<a class="btn btn-default" href="#" role="button">Link</a>
-<button class="btn btn-default" type="submit">Button</button>
-<input class="btn btn-default" type="button" value="Input">
+  
 <input class="btn btn-default" type="submit" value="Submit">
     <div id="info" align="center">
       <h1 align="center">Color Collages</h1>
@@ -20,7 +18,7 @@
       <input align="center" type="text" id="usernamefield" value="">
       <h3 align="center">Pick a color:</h3>
       <input align="center" type="text" id="colorfield" value="">
-      <button role="button" id="button" type="submit" align="center">Submit</button>
+      <input class="btn btn-default" type="submit" value="Submit" align="center">
       </br>
     </div>
     </br>
@@ -34,7 +32,7 @@
 	var clientid = 'ea126bd8795744b2a86ec4e775f6454c';
 	
 	$(document).ready(function() {
-		$("#button").click(function(e){
+		$("#btn btn-default").click(function(e){
 			$("#images").empty();
 			e.preventDefault();
 			console.log($("#usernamefield").val());
