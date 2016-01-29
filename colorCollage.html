@@ -37,7 +37,8 @@
 		        success: function(data) {
 		            for(var i = 0; i < 2; i++) {
 		            	var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
-		                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].link;
+		                console.log(data.data[i].link);
+		                /*var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].link;
 		                $.ajax({
 		                	type: 'GET',
 		                	dataType: 'jsonp',
@@ -45,12 +46,12 @@
 		                	url: imaggaURL,
 		                	async: false,
 					headers: {
-					   "Authorization": "Basic YWNjXzI3NTVkYzE2NDg5M2I4ZTozNTgxZDg0M2YwYzg3ODdkOGMzMGYyY2ZjOGZjNDAxNw=="
+					   "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
 					},
 		                	success: function(data2){
 			                	console.log(data2)
 		                	}
-		                });
+		                });*/
 		            }
 		        }
 		    });
