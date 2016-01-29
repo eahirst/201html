@@ -10,5 +10,6 @@ body {
   border-bottom: 1px solid #eee;
 }
 .info{
+  text-align:center;
   margin:auto;
 }
