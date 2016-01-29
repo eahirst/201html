@@ -19,6 +19,8 @@ body {
 #colorfield{
   color:black;
 }
-input{
-  color:black;
+input, select, textarea { 
+color: black; 
 }
+
+
