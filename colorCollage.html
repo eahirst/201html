@@ -44,9 +44,10 @@
 						if (dta.data[k]['username'] == userName)
 						{
 							userID = dta.data[k]['id'];
-							console.log(userID);
+						
 							break;
 						}
+						console.log(userID);
 					}
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		
