@@ -26,6 +26,7 @@
 	$(document).ready(function() {
 		$("#button").click(function(e){
 		e.preventDefault();
+		console.log($("#usernamefield").val());
 		var userTag = $("#usernamefield").val();
 		var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
 		    $.ajax({
