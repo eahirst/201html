@@ -38,16 +38,15 @@
 				success: function(dta){
 					console.log(dta);
 					var userID = "";
-					console.log(dta.data[0]);
-					/*for (var k = 0; k < dta.length; k++)
+					for (var k = 0; k < dta.data.length; k++)
 					{
-						console.log(dta[k]);
-						if (dta[k]['username'] == userName)
+						console.log(dta.data[k]);
+						if (dta.data[k]['username'] == userName)
 						{
-							userID = dta[k]['id'];
+							userID = dta.data[k]['id'];
 							break;
 						}
-					}*/
+					}
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		
 		    			$.ajax({
