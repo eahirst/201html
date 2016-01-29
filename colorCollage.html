@@ -30,8 +30,9 @@
 		console.log($("#usernamefield").val());
 		var userTag = $("#usernamefield").val();
 		var colorPicked = $("#colorfield").val();
+		var userID = "1522494795";
 		var myurl = "https://api.instagram.com/v1/tags/" + userTag + "/media/recent?client_id=" + clientid;
-		var myurl2 =  "https://api.instagram.com/v1/users/" + userTag + "/media/recent?client_id=" + clientid;
+		var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 		    $.ajax({
 		        type: 'GET',
 		        dataType: 'jsonp',
