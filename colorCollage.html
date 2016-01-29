@@ -26,6 +26,7 @@
 	
 	$(document).ready(function() {
 		$("#button").click(function(e){
+			$('images').empty();
 			e.preventDefault();
 			console.log($("#usernamefield").val());
 			var userName = $("#usernamefield").val();
@@ -57,7 +58,7 @@
 						cache: false,
 		        			url: myurl2,
 		        			success: function(data) {
-		        				$('images').empty();
+
 		            				for(var i = 0; i < 20; i++) {
 			            				var toAppend = '<a target="_blank" href="' + data.data[i].link + '"><img src="' + data.data[i].images.standard_resolution.url+ '"></a>';
 						                console.log(data.data[i].images.standard_resolution.url);
