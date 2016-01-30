@@ -71,6 +71,7 @@
 								var imgurl = data.data[i].images.standard_resolution.url;
 								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
 							    var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
+							    var 
 							    console.log(apiURL);
 							    $.ajax({
 							        type: 'GET',
@@ -80,8 +81,7 @@
 							        },
 							        success: function(data2)
 									{
-								        console.log(apiURL);
-								        apiURL="";
+								        console.log(data2);
 							        }
 						        		
 								});
