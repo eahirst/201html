@@ -6,7 +6,35 @@
     <link rel="stylesheet" href="todo.css">
   </head>
   <body>
-    <h2>Todo</h2>
+   <!doctype html>
+<html ng-app="fhistoryapp">
+  <head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <div class="page-header">
+			<h1>My Family History List</h1>
+		</div>
+    <div ng-controller="FamilyListController as familyList">
+      <span>{{familyList.remaining()}} of {{familyList.families.length}} remaining</span>
+      [ <a href="" ng-click="familyList.archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="family in familyList.families">
+          <input type="checkbox" ng-model="family.done">
+          <span class="done-{{family.done}}">{{family.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="familyList.addFamily()">
+        <input type="text" ng-model="familyList.familyText"  size="30"
+               placeholder="add new family here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html>
+
     <div ng-controller="FamilyListController as familyList">
       <span>{{familyList.remaining()}} of {{familyList.families.length}} remaining</span>
       [ <a href="" ng-click="familyList.archive()">archive</a> ]
