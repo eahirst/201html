@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=width-device, initial-scale=1">
-  <link rel="stylesheet" href="color.css">
-  <title>Color Collages</title>
-  </head>
-  <body>
-
-    <div class="page-header">
-      <h1 align="center">Color Collages</h1>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=width-device, initial-scale=1">
+	<link rel="stylesheet" href="color.css">
+	<title>Color Collages</title>
+</head>
+<body>
+	<div class="page-header">
+		<h1 align="center">Color Collages</h1>
     </div>
     <div class="info">
-    <h2 align="center">Input an Instagram username:</h2>
-      <input align="center" type="text" id="usernamefield" value="" style="color:#000000">
-      <h3 align="center">Pick a color:</h3>
-      <input align="center" type="text" id="colorfield" value="" style="color:#000000">
-      </br></br>
-      <input class="btn btn-default" id="submit" type="submit" value="Submit" align="center">
-      </br></br>
+		<h2 align="center">Input an Instagram username:</h2>
+		<input align="center" type="text" id="usernamefield" value="" style="color:#000000">
+		<h3 align="center">Pick a color:</h3>
+		<input align="center" type="text" id="colorfield" value="" style="color:#000000">
+		</br></br>
+		<input class="btn btn-default" id="submit" type="submit" value="Submit" align="center">
+		</br></br>
     </div>
     <div id="images">
     	
     </div>
-  
-
     <script>
 	var clientid = 'ea126bd8795744b2a86ec4e775f6454c';
 	
@@ -54,67 +51,67 @@
 						if (dta.data[k]['username'] == userName)
 						{
 							userID = dta.data[k]['id'];
-						
 							break;
 						}
 						console.log(userID);
 					}
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
-		
-		    			$.ajax({
+					$.ajax({
 						type: 'GET',
-		        			dataType: 'jsonp',
+		        		dataType: 'jsonp',
 						cache: false,
-		        			url: myurl2,
-		        			success: function(data) {
-									$('#images').append('<div class="row">');
-		            				for(var i = 0; i < 2; i++) {
-		            						
-			            				var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
-						                //console.log(data.data[i].images.standard_resolution.url);
-						                var imaggaURL = "https://api.imagga.com/v1/content";
-						                var imgurl = data.data[i].images.standard_resolution.url;
-						                console.log(imgurl);
-						                
-						               /*	$.ajax({
-						               		type: 'POST',
-						               		data: imgurl,
-						               		cache: false,
-						               		url: imaggaURL,
-						               		async: false,
-															headers: {
-																 "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
-															},
-						               		success: function(data){
-						               			console.log(data);
-						               			var contentID = "";
-						               			var imagga2 = "https://api.imagga.com/v1/colors?" + contentID;*/
-						               			var imagga2 = "https://api.imagga.com/v1/colors?url=" + imgurl;
-								                $.ajax({
-								                	type: 'GET',
-								                	dataType: 'jsonp',
-								                	cache: false,
-								                	url: imagga2,
-								                	async: false,
-											headers: {
-											   "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
-											},
-								                	success: function(data2){
-									                	for(var j = 0; j < data.data2.colors["info"]["foreground_colors"].length; j++)
-									                	{
-									                		if (data.data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "black")
-									                		{
-									                		 	$('#images').append(toAppend);
-									                		}
-									                	}
-								                	}
-								                });
-						               		}
-
-						               	});
-		        				}
-		        				$('#images').append('</div>');
+		        		url: myurl2,
+		        		success: function(data) {
+							$('#images').append('<div class="row">');
+		            		for(var i = 0; i < 2; i++) 
+							{
+								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
+						        //console.log(data.data[i].images.standard_resolution.url);
+						        var imaggaURL = "https://api.imagga.com/v1/content";
+						        var imgurl = data.data[i].images.standard_resolution.url;
+						        console.log(imgurl);
+						        /*	$.ajax({
+						            type: 'POST',
+						            data: imgurl,
+						            cache: false,
+						            url: imaggaURL,
+						            async: false,
+									headers: {
+										"Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
+									},
+						            success: function(data){
+						               	console.log(data);
+						               	var contentID = "";
+						               	var imagga2 = "https://api.imagga.com/v1/colors?" + contentID;
+								*/
+						        var imagga2 = "https://api.imagga.com/v1/colors?url=" + imgurl;
+								$.ajax
+								({
+								    type: 'GET',
+								    dataType: 'jsonp',
+								    cache: false,
+								    url: imagga2,
+									async: false,
+									headers: 
+									{
+										"Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
+									},
+								    success: function(data2)
+									{
+										for(var j = 0; j < data.data2.colors["info"]["foreground_colors"].length; j++)
+									    {
+									        if (data.data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "black")
+									        {
+									            $('#images').append(toAppend);
+									        }
+									    }
+								    }
+										});
+									/}
+								//});
+								$('#images').append('</div>');
 		        			}
+						}
 					});	
 				}
 		
