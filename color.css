@@ -20,7 +20,7 @@ body {
 .thumbnail{
   padding:0px;
 }
-.suggestions{
+ul{
   
 list-style-type:none;
 }
