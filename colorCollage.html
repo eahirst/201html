@@ -69,11 +69,7 @@
 		        			success: function(data) {
 							$('#images').append('<div class="row">');
 		            				for(var i = 0; i < 20; i++) {
-		            					if((i % 5) == 0)
-		            					{
-		            						$('#images').append('</div><div class="row">');
-		            					}
-							  		
+		            						
 			            				var toAppend = '<div class="col-xs-6 col-md-3"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
 						                console.log(data.data[i].images.standard_resolution.url);
 						                var imaggaURL = "https://api.imagga.com/v1/colors?url=" + data.data[i].images.standard_resolution.url;
