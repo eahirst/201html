@@ -75,7 +75,7 @@
 							        var imgurl = data.data[i].images.standard_resolution.url;
 							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
 							        console.log(imgurl);
-							       	$.ajax({
+							       	/*$.ajax({
 							        	type: 'GET',
 							        	url: apiURL,
 							        	headers:{
@@ -97,7 +97,8 @@
 								        	//	$('#images').append(toAppend);
 							        	}
 						        		
-							        });
+							        });*/
+							        	$('#images').append(toAppend);
 		        				}
 		        			$('#images').append('</div>');
 						}
