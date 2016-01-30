@@ -71,7 +71,7 @@
 											var imgurl = data.data[i].images.standard_resolution.url;
 											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
 							        
-							        console.log(data.data[i].images.standard_resolution.url);
+							       // console.log(data.data[i].images.standard_resolution.url);
 							        
 							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
 							        	$('#images').append(toAppend);
@@ -83,6 +83,7 @@
 							        	},
 							        	success: function(data){
 								        	
+								        	console.log(imgURL);
 								        		for (var j = 0; j < data["tags"].length; j++)
 								        		{
 								        			//console.log(data["tags"][j]["label"])
