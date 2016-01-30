@@ -66,28 +66,36 @@
 		        		url: myurl2,
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
+							var imageArray = [];
 		            		for(var i = 0; i < 2; i++) 
 							{
 								var imgurl = data.data[i].images.standard_resolution.url;
 								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
 							    var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
-							    
+							    imageArray.append(apiURL)
 							    console.log(apiURL);
-							    $.ajax({
-							        type: 'GET',
-							        url: apiURL,
-							        headers:{
-							        	"X-Mashape-Key": "fCkaGLnaysmshuL8pWVuEJGSu5f4p1yAoN2jsnAfIRL2uFc32J"
-							        },
-							        success: function(data2)
-									{
-								        console.log(data2);
-								        var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
-								        $('#images').append(toAppend);
-							        }
-						        		
-								});
+							    
+								
+								
+								
 		        			}
+							for (var m = 0; m < imageArray.length; m++){
+							
+								$.ajax({
+										type: 'GET',
+										url: imageArray[m],
+										headers:{
+											"X-Mashape-Key": "fCkaGLnaysmshuL8pWVuEJGSu5f4p1yAoN2jsnAfIRL2uFc32J"
+										},
+										success: function(data2)
+										{
+											console.log(data2);
+											
+											$('#images').append(toAppend);
+										}
+											
+								});
+							}
 		        			$('#images').append('</div>');
 						}
 					});	
