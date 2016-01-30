@@ -93,10 +93,13 @@
 											console.log(this.url);
 											var newURL = (this.url).substring(57);
 											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" class="thumbnail"><img src="' + newURL + '"></a></div>';
-											if(data2["tags"][j]["label"] == colorPicked)
+										for (var j = 0; j < data2["tags"].length; j++)
+								        {
+								        	if(data2["tags"][j]["label"] == colorPicked)
 								        	{
 												$('#images').append(toAppend);
 											}
+								        }
 										}
 											
 								});
