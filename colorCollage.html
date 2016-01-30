@@ -36,7 +36,12 @@
 			e.preventDefault();
 			console.log($("#usernamefield").val());
 			var userName = $("#usernamefield").val();
-			var colorPicked = $("#colorfield").val();
+			var CP = $("#colorfield").val();
+			String.prototype.capitalizeFirstLetter = function() {
+    		return this.charAt(0).toUpperCase() + this.slice(1);
+			}
+			var colorPicked = CP.toLowerCase().capitalizeFirstLetter();
+			console.log(colorPicked);
 			var nameID = "https://api.instagram.com/v1/users/search?q=" + userName + "&client_id=" + clientid;
 			$.ajax({
 				type: 'GET',
