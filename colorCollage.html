@@ -78,9 +78,9 @@
 							        	},
 							        	success: function(data){
 								        		console.log(data);
-								        		for (var j = 0; j < data.data.length; j++)
+								        		for (var j = 0; j < data.length; j++)
 								        		{
-								        			console.log(data.data[i].label)
+								        			console.log(data[i].label)
 								        			if(data.data[i].label == "Green")
 								        			{
 								        				$('#images').append(toAppend);
