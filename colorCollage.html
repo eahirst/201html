@@ -72,7 +72,7 @@
 								var imgurl = data.data[i].images.standard_resolution.url;
 								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
 							    var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
-							    imageArray.append(apiURL)
+							    imageArray.push(apiURL)
 							    console.log(apiURL);
 							    
 								
