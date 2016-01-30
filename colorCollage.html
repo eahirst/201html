@@ -91,7 +91,9 @@
 										{
 											console.log(data2);
 											console.log(this.url);
-											//$('#images').append(toAppend);
+											var newURL = (this.url).substring(57);
+											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" class="thumbnail"><img src="' + newURL + '"></a></div>';
+											$('#images').append(toAppend);
 										}
 											
 								});
