@@ -73,7 +73,7 @@
 			            				var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
 						                //console.log(data.data[i].images.standard_resolution.url);
 						                var imaggaURL = "https://api.imagga.com/v1/content?url=" + data.data[i].images.standard_resolution.url;
-						                //console.log(imaggaURL);
+						                console.log(imaggaURL);
 						                
 						               	$.ajax({
 						               		type: 'POST',
