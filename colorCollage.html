@@ -63,14 +63,14 @@
 		        		url: myurl2,
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
-		            		for(var i = 0; i < 2; i++) 
+		            		for(var i = 0; i < 4; i++) 
 										{
 											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
 							        //console.log(data.data[i].images.standard_resolution.url);
 							        var imgurl = data.data[i].images.standard_resolution.url;
 							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
 							        console.log(imgurl);
-							        $.ajax({
+							       /* $.ajax({
 							        	type: 'GET',
 							        	url: apiURL,
 							        	headers:{
@@ -78,10 +78,11 @@
 							        	},
 							        	success: function(data){
 								        		console.log(data);
-								        		$('#images').append(toAppend);
+								        	//	$('#images').append(toAppend);
 							        	}
 						        		
-							        });
+							        });*/
+							        	$('#images').append(toAppend);
 		        				}
 		        			$('#images').append('</div>');
 						}
