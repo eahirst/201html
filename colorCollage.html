@@ -48,7 +48,6 @@
 				dataType: 'jsonp',
 				url: nameID,
 				success: function(dta){
-					console.log(dta);
 					var userID = "";
 					for (var k = 0; k < dta.data.length; k++)
 					{
@@ -58,7 +57,6 @@
 							userID = dta.data[k]['id'];
 							break;
 						}
-						console.log(userID);
 					}
 					var myurl2 =  "https://api.instagram.com/v1/users/" + userID + "/media/recent?client_id=" + clientid;
 					$.ajax({
@@ -70,9 +68,10 @@
 							$('#images').append('<div class="row">');
 		            		for(var i = 0; i < 20; i++) 
 										{
-											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
-							        //console.log(data.data[i].images.standard_resolution.url);
-							        var imgurl = data.data[i].images.standard_resolution.url;
+											var imgurl = data.data[i].images.standard_resolution.url;
+											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
+							        console.log(data.data[i].images.standard_resolution.url);
+							        
 							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
 							        console.log(imgurl);
 							       	/*$.ajax({
@@ -82,8 +81,7 @@
 							        		"X-Mashape-Key": "fCkaGLnaysmshuL8pWVuEJGSu5f4p1yAoN2jsnAfIRL2uFc32J"
 							        	},
 							        	success: function(data){
-								        		console.log(data);
-								        		console.log(data["tags"]);
+								        	
 								        		for (var j = 0; j < data["tags"].length; j++)
 								        		{
 								        			console.log(data["tags"][j]["label"])
