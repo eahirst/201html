@@ -70,7 +70,7 @@
 						        var imaggaURL = "https://api.imagga.com/v1/content";
 						        var imgurl = data.data[i].images.standard_resolution.url;
 						        console.log(imgurl);
-						        	$.ajax({
+						        	/*$.ajax({
 						            type: 'POST',
 						            data: imgurl,
 						            cache: false,
@@ -82,7 +82,7 @@
 						            success: function(data){
 						               	console.log(data);
 						               	var contentID = "";
-						               	var imagga2 = "https://api.imagga.com/v1/colors?" + contentID;
+						               	var imagga2 = "https://api.imagga.com/v1/colors?" + contentID;*/
 								
 						        var imagga2 = "https://api.imagga.com/v1/colors?url=" + imgurl;
 								$.ajax
@@ -107,8 +107,8 @@
 									    }
 								    }
 										});
-									}
-								});
+									//}
+								//});
 								$('#images').append('</div>');
 		        			}
 						}
