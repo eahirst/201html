@@ -63,7 +63,7 @@
 		        		url: myurl2,
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
-		            		for(var i = 0; i < 20; i++) 
+		            		for(var i = 0; i < 2; i++) 
 										{
 											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
 							        //console.log(data.data[i].images.standard_resolution.url);
