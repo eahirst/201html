@@ -82,6 +82,8 @@
 							        success: function(data2)
 									{
 								        console.log(data2);
+								        var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
+								        $('#images').append(toAppend);
 							        }
 						        		
 								});
