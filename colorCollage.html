@@ -78,10 +78,10 @@
 							        	},
 							        	success: function(data){
 								        		console.log(data);
-								        		for (var j = 0; j < data.data.tags.length; j++)
+								        		for (var j = 0; j < data.data["tags"].length; j++)
 								        		{
-								        			console.log(data.data.tags.label)
-								        			if(data.data.tags[i].label == "Black")
+								        			console.log(data.data["tags"].label)
+								        			if(data.data["tags"][i].label == "Black")
 								        			{
 								        				$('#images').append(toAppend);
 								        			}
