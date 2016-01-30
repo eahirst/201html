@@ -25,7 +25,7 @@
       </form>
       </br>
       <ul class="unstyled">
-        <li ng-repeat="family in familyList.families">
+        <li class="unstyled" ng-repeat="family in familyList.families">
           <input type="checkbox" ng-model="family.done">
           <span class="done-{{family.done}}">{{family.text}}</span>
         </li>
