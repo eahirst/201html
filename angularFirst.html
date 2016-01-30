@@ -20,9 +20,14 @@
       <input type="text" ng-model="person">
       <input type="text" ng-model="dad">
       <input type="text" ng-model="mom">
-      <button ng-click='updateMessage()'>Add New</button>
+      <button ng-click='familyList.addFamily()'>Add New</button>
       <hr>
-      {{heading + family}}
+      <ul class="unstyled">
+      	<li ng-repeat="family in familyList.families">
+      		<input type="checkbox" ng-model="family.done">
+      		<span class="done-{{family.done}}">{{family.text}}</span>
+      	</li>
+      </ul>
     </div>
     <script src="js/angular.min.js"></script>
     <script src="js/first.js"></script>
