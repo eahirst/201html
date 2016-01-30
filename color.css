@@ -20,6 +20,9 @@ body {
 .thumbnail{
   padding:0px;
 }
-
+.suggestions{
+  
+list-style-type:none;
+}
 
 
