@@ -78,13 +78,13 @@
 						                
 						               	$.ajax({
 						               		type: 'POST',
-						               		data: image,
+						               		file: image,
 						               		cache: false,
 						               		url: imaggaURL,
 						               		async: false,
-									headers: {
-										 "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
-									},
+															headers: {
+																 "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
+															},
 						               		success: function(data){
 						               			console.log(data);
 						               			var contentID = "";
@@ -101,7 +101,7 @@
 								                	success: function(data2){
 									                	for(var j = 0; j < data.data2.colors["info"]["foreground_colors"].length; j++)
 									                	{
-									                		if (data.data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "white")
+									                		if (data.data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "black")
 									                		{
 									                		 	$('#images').append(toAppend);
 									                		}
@@ -109,6 +109,7 @@
 								                	}
 								                });*/
 						               		}
+						               		error: 
 						               	});
 		        				}
 		        				$('#images').append('</div>');
