@@ -64,52 +64,16 @@
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
 		            		for(var i = 0; i < 2; i++) 
-							{
-								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
-						        //console.log(data.data[i].images.standard_resolution.url);
-						        var imaggaURL = "https://api.imagga.com/v1/content";
-						        var imgurl = data.data[i].images.standard_resolution.url;
-						        console.log(imgurl);
-						        	$.ajax({
-						            type: 'POST',
-						            image: imgurl,
-						            cache: false,
-						            url: imaggaURL,
-						            async: false,
-									headers: {
-										"Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
-									},
-						            success: function(data){
-						               	console.log(data);
-						               	var contentID = "";
-						               	var imagga2 = "https://api.imagga.com/v1/colors?" + contentID;
-								
-								$.ajax
-								({
-								    type: 'GET',
-								    dataType: 'jsonp',
-								    cache: false,
-								    url: imagga2,
-									async: false,
-									headers: 
-									{
-										"Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
-									},
-								    success: function(data2)
-									{
-										for(var j = 0; j < data.data2.colors["info"]["foreground_colors"].length; j++)
-									    {
-									        if (data.data2['colors']['info']['foreground_colors'][j]['closest_palette_color_parent'] == "black")
-									        {
-									            $('#images').append(toAppend);
-									        }
-									    }
-								    }
-										});
-									}
-								});
-								$('#images').append('</div>');
+										{
+											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
+							        //console.log(data.data[i].images.standard_resolution.url);
+							        var imaggaURL = "https://api.imagga.com/v1/content";
+							        var imgurl = data.data[i].images.standard_resolution.url;
+							        console.log(imgurl);
+						        	$('#images').append(toAppend);
+										
 		        			}
+		        			$('#images').append('</div>');
 						}
 					});	
 				}
