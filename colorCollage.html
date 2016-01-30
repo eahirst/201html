@@ -38,7 +38,7 @@
 			var userName = $("#usernamefield").val();
 			var CP = $("#colorfield").val();
 			String.prototype.capitalizeFirstLetter = function() {
-    		return this.charAt(0).toUpperCase() + this.slice(1);
+    					return this.charAt(0).toUpperCase() + this.slice(1);
 			}
 			var colorPicked = CP.toLowerCase().capitalizeFirstLetter();
 			console.log(colorPicked);
@@ -88,7 +88,7 @@
 								        		{
 								        			console.log(data["tags"][j]["label"])
 								        			
-								        			if(data["tags"][j]["label"] == "Green")
+								        			if(data["tags"][j]["label"] == colorPicked)
 								        			{
 								        				$('#images').append(toAppend);
 								        			}
