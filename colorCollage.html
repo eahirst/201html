@@ -62,45 +62,38 @@
 					$.ajax({
 						type: 'GET',
 		        		dataType: 'jsonp',
-							cache: false,
+						cache: false,
 		        		url: myurl2,
 		        		success: function(data) {
-								$('#images').append('<div class="row">');
-		            		for(var i = 0; i < 4; i++) 
-										{
-											var imgurl = data.data[i].images.standard_resolution.url;
-											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
-							        
-							       // console.log(data.data[i].images.standard_resolution.url);
-							        
-							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
-							        	$('#images').append(toAppend);
-							       	$.ajax({
-							        	type: 'GET',
-							        	url: apiURL,
-							        	headers:{
-							        		"X-Mashape-Key": "fCkaGLnaysmshuL8pWVuEJGSu5f4p1yAoN2jsnAfIRL2uFc32J"
-							        	},
-							        	success: function(data){
-								        	
-								        	console.log(imgurl);
-								        		for (var j = 0; j < data["tags"].length; j++)
-								        		{
-								        			//console.log(data["tags"][j]["label"])
-								        			
-								        			if(data["tags"][j]["label"] == colorPicked)
-								        			{
-								        				console.log("It was " + colorPicked + "!");
-								        				break;
-								        			}
-								        			
-								        		}
-								        	
-								        	//	$('#images').append(toAppend);
-							        	}
+							$('#images').append('<div class="row">');
+		            		for(var i = 0; i < 2; i++) 
+							{
+								var imgurl = data.data[i].images.standard_resolution.url;
+								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
+							    var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
+							    
+							    $.ajax({
+							        type: 'GET',
+							        url: apiURL,
+							        headers:{
+							        	"X-Mashape-Key": "fCkaGLnaysmshuL8pWVuEJGSu5f4p1yAoN2jsnAfIRL2uFc32J"
+							        },
+							        success: function(data2)
+									{
+								        console.log(imgurl);
+								        for (var j = 0; j < data2["tags"].length; j++)
+								        {
+								        	if(data2["tags"][j]["label"] == colorPicked)
+								        	{
+								        		console.log("It was " + colorPicked + "!");
+												$('#images').append(toAppend);
+								        	}
+								        }
+								        //	$('#images').append(toAppend);
+							        }
 						        		
-							        });
-		        				}
+								});
+		        			}
 		        			$('#images').append('</div>');
 						}
 					});	
