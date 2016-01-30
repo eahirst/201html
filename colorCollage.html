@@ -78,7 +78,10 @@
 						               	$.ajax({
 						               		type: 'POST',
 						               		url: imaggaURL,
-						               		
+						               		async: false,
+									headers: {
+										 "Authorization": "Basic " + btoa("acc_2755dc164893b8e" + ":" + "3581d843f0c8787d8c30f2cfc8fc4017")
+									},
 						               		success: function(data){
 						               			console.log(data);
 						               			var contentID = "";
