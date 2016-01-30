@@ -59,7 +59,7 @@
 					$.ajax({
 						type: 'GET',
 		        		dataType: 'jsonp',
-						cache: false,
+							cache: false,
 		        		url: myurl2,
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
@@ -67,12 +67,19 @@
 										{
 											var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + data.data[i].images.standard_resolution.url+ '"></a></div>';
 							        //console.log(data.data[i].images.standard_resolution.url);
-							        var imaggaURL = "https://api.imagga.com/v1/content";
 							        var imgurl = data.data[i].images.standard_resolution.url;
+							        var apiURL = "https://apicloud-colortag.p.mashape.com/tag-url.json?url=" + imgurl;
 							        console.log(imgurl);
-						        	$('#images').append(toAppend);
-										
-		        			}
+							        $.ajax({
+							        	type: 'GET',
+							        	url: apiURL,
+							        	success: function(data){
+								        		console.log(data);
+								        		$('#images').append(toAppend);
+							        	}
+						        		
+							        });
+		        				}
 		        			$('#images').append('</div>');
 						}
 					});	
