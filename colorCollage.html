@@ -20,6 +20,15 @@
 		<input align="center" type="text" id="usernamefield" value="" style="color:#000000">
 		<h3 align="center">Pick a color:</h3>
 		<input align="center" type="text" id="colorfield" value="" style="color:#000000">
+		<div class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+		  <span class="caret"></span></button>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">HTML</a></li>
+		    <li><a href="#">CSS</a></li>
+		    <li><a href="#">JavaScript</a></li>
+		  </ul>
+		</div>
 		</br></br>
 		<input class="btn btn-default" id="submit" type="submit" value="Submit" align="center">
 		</br></br>
@@ -67,7 +76,7 @@
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
 							var imageArray = [];
-		            		for(var i = 0; i < 20; i++) 
+		            		for(var i = 0; i < 5; i++) 
 							{
 								var imgurl = data.data[i].images.standard_resolution.url;
 								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
