@@ -67,7 +67,7 @@
 		        		success: function(data) {
 							$('#images').append('<div class="row">');
 							var imageArray = [];
-		            		for(var i = 0; i < 2; i++) 
+		            		for(var i = 0; i < 20; i++) 
 							{
 								var imgurl = data.data[i].images.standard_resolution.url;
 								var toAppend = '<div class="col-xs-5 col-md-2"><a target="_blank" href="' + data.data[i].link + '" class="thumbnail"><img src="' + imgurl + '"></a></div>';
