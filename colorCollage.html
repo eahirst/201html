@@ -21,8 +21,14 @@
 		<input align="center" type="text" id="usernamefield" value="" style="color:#000000">
 		<h3 align="center">Pick a color:</h3>
 		<input align="center" type="text" id="colorfield" value="" style="color:#000000">
-		</br>
-		</br>
+		<div class="dropdown">
+		  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+		  <div id="myDropdown" class="dropdown-content">
+		    <a href="#">Link 1</a>
+		    <a href="#">Link 2</a>
+		    <a href="#">Link 3</a>
+		  </div>
+		</div>
 		
 		</br></br>
 		<input class="btn btn-default" id="submit" type="submit" value="Submit" align="center">
@@ -35,6 +41,26 @@
 	var clientid = 'ea126bd8795744b2a86ec4e775f6454c';
 	
 	$(document).ready(function() {
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+		
+		// Close the dropdown menu if the user clicks outside of it
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropbtn')) {
+		
+		    var dropdowns = document.getElementsByClassName("dropdown-content");
+		    var i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      var openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+}
 		$("#submit").click(function(e){
 			$("#images").empty();
 			e.preventDefault();
