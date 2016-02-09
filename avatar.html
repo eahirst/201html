@@ -11,6 +11,10 @@
 	.page-header{
 	  text-align:center;
 	}
+	.main-content{
+		margin-left:auto;
+		margin-right:auto;
+	}
     .User-list {
   list-style: none;
 }
@@ -35,7 +39,7 @@
 </head>
 <body>
   <div class='page-header'>User Creation</div>
-  <div ng-app='app' ng-controller='mainCtrl'>
+  <div ng-app='app' ng-controller='mainCtrl' class="main-content">
     <h1>Create new user</h1>
 
     <form name='userForm' ng-submit='addNew(userForm)'>
