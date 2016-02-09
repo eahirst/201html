@@ -37,17 +37,10 @@
     </form>
     
     <ul class='User-list'>
-      <!--
-        ng-repeat loops through the users array bound to the scope of mainCtrl and gives
-        us access to the user object in each index so we can reference the user properties
-      -->
-      <li ng-repeat='user in users'>
-        <div class='Avatar'>
-          <img ng-src='{{user.avatarUrl}}' />
-          <h4>{{user.name}}</h4>
-        </div>
-      </li>
-    </ul>
+	  <li ng-repeat='user in users'>
+	    <avatar user='user' />
+	  </li>
+	</ul>
   </div>
 </body>
 </html>
