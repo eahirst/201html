@@ -4,20 +4,31 @@
   <script src="js/angular.min.js"></script>
   <script src="avatarscript.js"></script>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>User Avatar Template</title>
 </head>
 <body>
-<div ng-app='app' ng-controller='mainCtrl'>
-<h1>Create new user</h1>
-<form name='userForm' ng-submit='addNew(userForm)'>
+  <div ng-app='app' ng-controller='mainCtrl'>
+    <h1>Create new user</h1>
+
+    <form name='userForm' ng-submit='addNew(userForm)'>
       <input placeholder='Name' ng-model='userForm.name'/>
       <input placeholder='Image Url' ng-model='userForm.url'/>
       <button type='submit'>Add New</button>
-</form>
-<ul class='User-list'>
- <li ng-repeat='user in users'>
-   {{user.name}}<img src={{user.avatarUrl}} width='50px' >
- </li>
+    </form>
+    
+    <ul class='User-list'>
+      <!--
+        ng-repeat loops through the users array bound to the scope of mainCtrl and gives
+        us access to the user object in each index so we can reference the user properties
+      -->
+      <li ng-repeat='user in users'>
+        <ul class='User-list'>
+  <li ng-repeat='user in users'>
+    <avatar user='user' />
+  </li>
+</ul>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>
