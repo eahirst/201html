@@ -53,11 +53,13 @@
       <input placeholder='Image Url' ng-model='userForm.url'/>
       <button type='submit'>Add New</button>
     </form>
-    
+    </br>
     <ul class='User-list'>
+    	<div class="row">
   <li ng-repeat='user in users'>
-    <avatar user='user' />
+    <div class="col-xs-5 col-md-2"><avatar user='user' /></div>
   </li>
+  </div>
 </ul>
   </div>
 </body>
