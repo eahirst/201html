@@ -2,16 +2,9 @@ angular.module('app', [])
   .controller('mainCtrl', mainCtrl);
 
 function mainCtrl ($scope) {
-  
-  // tada! a users array will now be bound to and made available to our html template
+
   $scope.users = [];
-  
-  /**
-   * 1. We push an new `user` object to our users list with a name
-   * and avatarUrl property
-   * 2. For our purposes, a quick and dirty method for clearing the form will due.
-   * Just note there is a more appropriate method when form validation is involved.
-   */
+
   $scope.addNew = function (user) {
     $scope.users.push({ 
       name: user.name,
@@ -19,6 +12,39 @@ function mainCtrl ($scope) {
     }); /* [1] */
     
     user.name = ''; /* [2] */
-    user.url = ''; /* [2] */
+    user.url = '';
   };
+}
+
+/**
+ * 1. this defines the api of our avatar directive. This means we are
+ * expecting a user property whose value should be interpreted as an object.
+ * 2. This simply means we want this directive to be used as an element.
+ * 3. You can see here we've moved the html that was in our template before
+ * and give it as the template for this directive. This means wherever we use
+ * <avatar /> this html will also be placed there.
+ * 4. Here we are implementing the feature where if there is no user avatar url,
+ * we go ahead and give it a default
+ */
+function avatarDirective () {
+  return {
+    scope: {
+      user: '=' /* [1] */
+    },
+    restrict: 'E', /* [2] */
+    template: (
+      '<div class="Avatar">' +
+        '<img ng-src="{{user.avatarUrl}}" />' +
+        '<h4>{{user.name}}</h4>' +
+      '</div>'
+    ), /* [3] */
+    link: link
+  };
+  
+  function link (scope) { /* [4] */
+    if (!scope.user.avatarUrl) {
+      scope.user.avatarUrl = 'http://thealmanac.org/assets/img/default_avatar.png';
+    }
+  }
+
 }
