@@ -1,50 +1,18 @@
-angular.module('app', [])
-  .controller('mainCtrl', mainCtrl);
+var app = angular.module('app', []);
+
+app.controller('mainCtrl', mainCtrl);
 
 function mainCtrl ($scope) {
-
-  $scope.users = [];
-
+  $scope.users = [{
+    name: 'Mikey Murphy',
+    avatarUrl: 'https://pbs.twimg.com/profile_images/621816592519688192/U8sbRNik.jpg'
+  }];
   $scope.addNew = function (user) {
-    $scope.users.push({ 
+    $scope.users.push({
       name: user.name,
       avatarUrl: user.url
-    }); /* [1] */
-    
-    user.name = ''; /* [2] */
+    });
+    user.name = '';
     user.url = '';
   };
-}
-
-/**
- * 1. this defines the api of our avatar directive. This means we are
- * expecting a user property whose value should be interpreted as an object.
- * 2. This simply means we want this directive to be used as an element.
- * 3. You can see here we've moved the html that was in our template before
- * and give it as the template for this directive. This means wherever we use
- * <avatar /> this html will also be placed there.
- * 4. Here we are implementing the feature where if there is no user avatar url,
- * we go ahead and give it a default
- */
-function avatarDirective () {
-  return {
-    scope: {
-      user: '=' /* [1] */
-    },
-    restrict: 'E', /* [2] */
-    template: (
-      '<div class="Avatar">' +
-        '<img ng-src="{{user.avatarUrl}}" />' +
-        '<h4>{{user.name}}</h4>' +
-      '</div>'
-    ), /* [3] */
-    link: link
-  };
-  
-  function link (scope) { /* [4] */
-    if (!scope.user.avatarUrl) {
-      scope.user.avatarUrl = 'http://thealmanac.org/assets/img/default_avatar.png';
-    }
-  }
-
 }
