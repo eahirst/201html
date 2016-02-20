@@ -24,7 +24,11 @@ angular.module('app', []).controller('mainCtrl', [
           {
             
             $(btn).text('Yay!');
-          }           $($scope.cuplist[j].cupimage).attr('src','http://shops.clubpenguinwiki.info/static/images/shops/thumb/c/ca/Toy_Story_Ball.png/120px-Toy_Story_Ball.png');
+          }    
+          else{
+             $(btn).text('Aww :(');
+          }
+          $($scope.cuplist[j].cupimage).attr('src','http://shops.clubpenguinwiki.info/static/images/shops/thumb/c/ca/Toy_Story_Ball.png/120px-Toy_Story_Ball.png');
           $($scope.cuplist[j].style).css('padding-top','15%');
           $($scope.cuplist[j].style).css('padding-bottom','3%');
           $('#shuffle').text("Shuffle!");
