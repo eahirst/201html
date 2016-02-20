@@ -1,0 +1,41 @@
+body{
+  background:white;
+
+}
+#header{
+  font-family: 'Droid Serif', Georgia, Times, serif;
+  text-align:center;
+  color:black;
+  padding-top:2%;
+}
+#cups{
+  padding-left:23.5%;
+  padding-top:2%;
+  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+#cup1{
+  padding-top:15%;
+  padding-bottom:3%;
+  float:left;
+  width:250px;
+  height:325px;
+  text-align:center;
+  
+}
+#cup2{
+  padding-top:1%;
+  padding-bottom:2.5%;
+  float:left;
+  width:250px;
+  height:325px;
+  text-align:center;
+}
+#cup3{
+  padding-top:1%;
+  padding-bottom:2.5%;
+ 
+  float:left;
+  width:250px;
+  height:325px;
+  text-align:center;
+}
