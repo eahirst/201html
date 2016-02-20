@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="ball.css">
+  <script src="ball.js">
+  <title>Where's the Ball?</title>
+</head>
+<body ng-app='app' ng-controller='mainCtrl' class="main-content">
+  <div id='header'>
+    <h1>Find the Ball!</h1>
+  </div>
+</br>
+  <div class="text-center"> 
+   <button id="shuffle" type="button" class="btn btn-default" ng-click='shuffle()'>Shuffle!</button>
+    </div>
+  </br>
+  <div class="text-center">
+    <button id="cup1btn" type="button" class="btn btn-default" ng-click='picked("0","#cup1btn")'>Pick this one!</button>
+    <button id="cup2btn" type="button" class="btn btn-default" ng-click='picked("1","#cup2btn")'>Pick this one!</button>
+    <button id="cup3btn" type="button" class="btn btn-default" ng-click='picked("2","#cup3btn")'>Pick this one!</button>
+  </div>
+    </br>
+  <div id='cups'>
+    <block id='cup1'>
+      <img src="http://shops.clubpenguinwiki.info/static/images/shops/thumb/c/ca/Toy_Story_Ball.png/120px-Toy_Story_Ball.png" id="temp1">
+    </block>
+    <block id='cup2'> 
+      <img src="http://www.clker.com/cliparts/c/v/W/h/v/Z/silver-cup-md.png" id="temp2">
+    </block>
+    <block id='cup3'>
+      <img src="http://www.clker.com/cliparts/c/v/W/h/v/Z/silver-cup-md.png" id="temp3">
+    </block>
+  </div>
+  
+</body>
+</html>
